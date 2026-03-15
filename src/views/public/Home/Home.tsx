@@ -1,55 +1,30 @@
-import { useState, useLayoutEffect } from 'react';
-import './Home.scoped.css';
+import './Home.css';
 
-import reactLogo from '@assets/brands/react.svg';
-import api from '@services/api';
+const gridItems = [
+  { id: 1, title: 'Seção 1' },
+  { id: 2, title: 'Seção 2' },
+  { id: 3, title: 'Seção 3' },
+  { id: 4, title: 'Seção 4' },
+  { id: 5, title: 'Seção 5' },
+  { id: 6, title: 'Seção 6' },
+  { id: 7, title: 'Seção 7' },
+  { id: 8, title: 'Seção 8' },
+];
 
 function Home(): JSX.Element {
-  const [count, setCount] = useState(0);
-  const [lorem, setLorem] = useState('');
-
-  useLayoutEffect(() => {
-    const loadLorem = async (): Promise<void> => {
-      const { data } = await api.get(
-        `https://baconipsum.com/api/?type=meat-and-filler&sentences=1&start-with-lorem=1`,
-      );
-      setLorem(data);
-    };
-
-    void loadLorem();
-  }, []);
-
   return (
-    <div className="d-flex container-fluid bg-dark">
-      <div
-        className="text-center m-auto text-light"
-        style={{ maxWidth: '340px' }}
-      >
-        <div>
-          <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-            <img src="/vite.svg" className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank" rel="noreferrer">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>Vite + React</h1>
-        <div className="counter">
-          <p>Lorem is: {lorem}</p>
-          <button
-            className="mb-3"
-            type="button"
-            onClick={() => setCount(c => c + 1)}
-          >
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-        <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
-        </p>
+    <div className="container-fluid p-4">
+      <div className="row g-4">
+        {gridItems.map(item => (
+          <div key={item.id} className="col-12 col-md-6 col-lg-3">
+            <div className="card h-100 shadow-sm">
+              <div className="card-header">
+                <h5 className="card-title mb-0">{item.title}</h5>
+              </div>
+              <div className="card-body grid-cell-content" />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
