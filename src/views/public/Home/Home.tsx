@@ -156,6 +156,41 @@ function Home(): JSX.Element {
           </div>
         </div>
       </div>
+
+      <footer className="row">
+        <div className="col-12 text-center mt-4">
+          <span className="text-white">
+            &copy; {new Date().getFullYear()} React TopoJSON Heatmap Examples
+          </span>
+        </div>
+        <div className="col-12 text-center mb-4">
+          <span className="text-white">
+            Developed by{' '}
+            <a
+              href="https://github.com/Gilsonlgd/react-topojson-heatmap"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white"
+            >
+              Gilson Garcia
+            </a>
+          </span>
+        </div>
+        {/* see documentation */}
+        <div className="col-12 text-center mb-4">
+          <span className="text-white">
+            For more information, visit the{' '}
+            <a
+              href="https://github.com/Gilsonlgd/react-topojson-heatmap"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white"
+            >
+              documentation.
+            </a>
+          </span>
+        </div>
+      </footer>
     </div>
   );
 }
