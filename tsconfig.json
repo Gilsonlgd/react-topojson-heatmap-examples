@@ -25,7 +25,8 @@
     "types": ["node"],
     "paths": {
       "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"],
+      "@examples/*": ["./src/examples/*"],
+      "@examples": ["./src/examples/index.tsx"],
       "@views/*": ["./src/views/*"],
       "@layout/*": ["./src/layout/*"],
       "@services/*": ["./src/services/*"],
