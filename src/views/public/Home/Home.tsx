@@ -6,6 +6,7 @@ import { Topo } from '@type/GeoMeshes';
 import { ValueType, RegionData } from '@type/HeatmapData';
 
 import {
+  MainExampleMap,
   DiscreteLegendMap,
   ContinuousLegendMap,
   RegionLabelMap,
@@ -70,6 +71,18 @@ function Home(): JSX.Element {
                 <option value="raw">Raw Value</option>
               </select>
             </label>
+          </div>
+        </div>
+      </div>
+
+      <div className="row my-4">
+        <div className="col-12 d-flex align-items-center justify-content-center">
+          <div className="map-container-xl">
+            <MainExampleMap
+              meshData={meshData}
+              data={randomData}
+              valueType={selectedValueType}
+            />
           </div>
         </div>
       </div>

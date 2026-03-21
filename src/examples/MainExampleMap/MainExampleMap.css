@@ -1,0 +1,58 @@
+/* Container geral */
+.main-map-container {
+  background: #212529;
+  color: #e9ecef;
+  height: 95%;
+
+  .map-card {
+    background: #2b3035;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .selected-regions {
+    font-size: 0.9rem;
+    color: #adb5bd;
+    background: #2b3035;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Map customization */
+  .react-topojson-heatmap__legend .continuous-legend_gradientbar {
+    width: 20px;
+  }
+
+  .react-topojson-heatmap__legend .continuous-legend {
+    font-weight: 700;
+  }
+
+  .react-topojson-heatmap__state:hover {
+    opacity: 0.8;
+    transform: scale(1.02) translateY(-10px);
+    filter: drop-shadow(0 0 12px rgba(116, 192, 252, 0.8));
+  }
+
+  .react-topojson-heatmap__state.selected {
+    stroke: whitesmoke;
+    stroke-width: 1px;
+    fill: rgb(80, 200, 120);
+    transform: scale(1.02) translateY(-10px);
+    filter: drop-shadow(0 0 12px rgba(116, 192, 252, 0.8));
+  }
+
+  /* Legend customization */
+  .react-topojson-heatmap__legend {
+    background-color: #2b3035;
+  }
+
+  .react-topojson-heatmap__legend .continuous-legend__labels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+  }
+}
