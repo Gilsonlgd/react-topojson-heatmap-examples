@@ -43,7 +43,7 @@ function RegionLabelMap({
     <TopoHeatmap
       data={data}
       topojson={meshData}
-      idPath="properties.codarea"
+      geoIdPath="properties.codarea"
       valueKey={valueType}
       colorRange={['#8098f6', '#14256b']}
     >
