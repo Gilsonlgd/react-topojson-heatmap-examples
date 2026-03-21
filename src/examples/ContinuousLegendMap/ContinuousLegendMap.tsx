@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { TopoHeatmap, DataItem } from 'react-topojson-heatmap';
+import { TopoHeatmap } from 'react-topojson-heatmap';
 
 import { Topo } from '@type/GeoMeshes';
 import { ValueType, RegionData } from '@type/HeatmapData';
@@ -22,7 +22,7 @@ function ContinuousLegendMap({
     return value.toFixed(2);
   };
 
-  const tooltipContent = (meta: DataItem): React.ReactNode => {
+  const tooltipContent = (meta: RegionData): React.ReactNode => {
     return (
       <div className="d-flex container-fluid flex-column">
         <h3 className="fw-bold text-center text-white">{meta.title}</h3>

@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { TopoHeatmap, DataItem } from 'react-topojson-heatmap';
+import { TopoHeatmap } from 'react-topojson-heatmap';
 
 import { Topo } from '@type/GeoMeshes';
 import { ValueType, RegionData } from '@type/HeatmapData';
@@ -24,7 +24,7 @@ function RegionLabelMap({
 
   const getRegionLabelContent = (
     regionId: string | number,
-    meta: DataItem,
+    meta: RegionData,
   ): React.ReactNode => {
     const value = meta[valueType] as number;
     return (
@@ -54,7 +54,7 @@ function RegionLabelMap({
         maxValueLabel="Max"
         minValueLabel="Min"
       />
-      <TopoHeatmap.RegionLabel
+      <TopoHeatmap.RegionLabel<RegionData>
         width={120}
         height={100}
         content={getRegionLabelContent}

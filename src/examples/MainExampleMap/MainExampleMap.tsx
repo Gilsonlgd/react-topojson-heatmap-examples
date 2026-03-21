@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './MainExampleMap.css';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { TopoHeatmap, DataItem } from 'react-topojson-heatmap';
+import { TopoHeatmap } from 'react-topojson-heatmap';
 
 import { Topo } from '@type/GeoMeshes';
 import { ValueType, RegionData } from '@type/HeatmapData';
@@ -26,7 +26,7 @@ function MainExampleMap({
     return value.toFixed(2);
   };
 
-  const tooltipContent = (meta: DataItem): React.ReactNode => {
+  const tooltipContent = (meta: RegionData): React.ReactNode => {
     return (
       <div className="d-flex container-fluid flex-column">
         <h3 className="fw-bold text-center text-white">{meta.title}</h3>
@@ -72,7 +72,10 @@ function MainExampleMap({
           maxValueLabel="Max"
           minValueLabel="Min"
         />
-        <TopoHeatmap.Tooltip float tooltipContent={tooltipContent} />
+        <TopoHeatmap.Tooltip
+          float
+          tooltipContent={(meta: RegionData) => tooltipContent(meta)}
+        />
       </TopoHeatmap>
 
       <span className="selected-regions">
