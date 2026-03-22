@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { TopoHeatmap, DataItem } from 'react-topojson-heatmap';
 
 import { Topo } from '@type/GeoMeshes';

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Topology } from 'react-topojson-heatmap';
 
 type Geometry = {
